@@ -1,0 +1,173 @@
+{% include 'policeheader.html' %}
+ <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+           
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="img-fluid" src="/static/img/carousel-1.jpg" alt="Image" style="height: 1000px">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 900px;">
+                        	<br><br><br>
+
+<center>
+	<h1 style="color: white">Mange Criminals</h1>
+	
+	<form method="post" enctype="multipart/form-data">
+		{% if data['up']%}
+     <table class="table" style="width: 500px ;color: white">
+     	    <tr>
+     	    	<th>First Name</th>
+     	    	<td><input type="text" name="fname" class="form-control" required="" value="{{data['up'][0]['first_name']}}"></td>
+     	    </tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" name="lname" class="form-control" required="" value="{{data['up'][0]['last_name']}}"></td>
+			</tr>
+			<tr>
+				<th>Gender</th>
+				<td><input type="radio" class=" btn btn-success" name="gen" value="male">Male
+					<input type="radio" class="btn btn-success" name="gen" value="female">Female</td>
+			</tr>
+			<tr>
+				<th>Date Of Birth</th>
+				<td><input type="date" name="date" class="form-control" required="" value="{{data['up'][0]['dob']}}"></td>
+			</tr>
+			<tr>
+				<th>Photo</th>
+				<td><input type="file" name="imgg" class="form-control" required="" value="{{data['up'][0]['photo']}}"></td>
+			</tr>
+			<tr>
+				<th>Thumb Impression</th>
+				<td><input type="file" name="thump" class="form-control" required="" value="{{data['up'][0]['thumb_impression']}}"></td>
+			</tr>
+			<tr>
+				<th>Identification Mark 1</th>
+				<td><input type="text" name="idm1" class="form-control" required="" value="{{data['up'][0]['identification_mark1']}}"></td>
+			</tr>
+			<tr>
+				<th>Identification Mark 2</th>
+				<td><input type="text" name="idm2" class="form-control" required="" value="{{data['up'][0]['identification_mark2']}}"></td>
+			</tr>
+			<tr>
+				<th>Address</th>
+				<td><textarea name="add" class="form-control" required="" >{{data['up'][0]['address']}}</textarea></td>
+			</tr>
+			<tr>
+				<th>Fathers Name</th>
+				<td><input type="text" name="faname" class="form-control" required="" value="{{data['up'][0]['father_name']}}"></td>
+			</tr>
+			<tr>
+				<th>place</th>
+				<td><input type="text" name="place"  class="form-control" required=""value="{{data['up'][0]['place']}}"></td>
+			</tr>
+			<tr>
+				<th>District</th>
+				<td><input type="text" name="dis" class="form-control" required="" value="{{data['up'][0]['district']}}"></td>
+			</tr>
+			
+			<tr>
+				<td  align="center" colspan="2"><input type="submit" class="btn btn-success" name="update" value="submit"></td>
+			</tr>
+		</table>
+		{% else %}
+	     <table class="table" style="width: 500px ;color: white">
+     	    <tr>
+     	    	<th>First Name</th>
+     	    	<td><input type="text" class="form-control" required="" name="fname"></td>
+     	    </tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" class="form-control" required="" name="lname"></td>
+			</tr>
+			<tr>
+				<th>Gender</th>
+				<td style="color: white"><input type="radio" name="gen" value="male">Male
+					<input type="radio" name="gen" value="female">Female</td>
+			</tr>
+			<tr>
+				<th>Date Of Birth</th>
+				<td><input type="date" class="form-control" required="" name="date"></td>
+			</tr>
+			<tr>
+				<th>Photo</th>
+				<td><input type="file" class="form-control" required="" name="imgg"></td>
+			</tr>
+			<tr>
+				<th>Thumb Impression</th>
+				<td><input type="file" class="form-control" required="" name="thump"></td>
+			</tr>
+			<tr>
+				<th>Identification Mark 1</th>
+				<td><input type="text" class="form-control" required="" name="idm1"></td>
+			</tr>
+			<tr>
+				<th>Identification Mark 2</th>
+				<td><input type="text" class="form-control" required="" name="idm2"></td>
+			</tr>
+			<tr>
+				<th>Address</th>
+				<td><textarea name="add" class="form-control" required=""></textarea></td>
+			</tr>
+			<tr>
+				<th>Fathers Name</th>
+				<td><input type="text" class="form-control" required="" name="faname"></td>
+			</tr>
+			<tr>
+				<th>place</th>
+				<td><input type="text" class="form-control" required="" name="place"></td>
+			</tr>
+			<tr>
+				<th>District</th>
+				<td><input type="text" class="form-control" required="" name="dis"></td>
+			</tr>
+			
+			<tr>
+				<td  align="center" colspan="2"><input type="submit" class="btn btn-success" name="criminals" value="submit"></td>
+			</tr>
+		</table>
+		{% endif %}
+	</form>
+</center>
+</div></div></div></div></div></div>
+<center>
+	<h1>View Criminals</h1>
+	<table class="table" style="width: 500px">
+	<tr>
+		<th>slno</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Genter</th>
+		<th>Dob</th>
+		<th>Photo</th>
+		<th>Thumb Impression</th>
+		<th>Identification mark 1</th>
+		<th>Identification mark 2</th>
+		<th>Address</th>
+		<th>father Name</th>
+		<th>Place</th>
+		<th>district</th>
+
+	</tr>
+	{% for row in data['c']%}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{row['first_name']}}</td>
+		<td>{{row['last_name']}}</td>
+		<td>{{row['genter']}}</td>
+		<td>{{row['dob']}}</td>
+		<td><img src="/{{row['photo']}}" width="100" height="100"></td>
+		<td><img src="/{{row['thumb_impression']}}" width="100" height="100"></td>
+		<td>{{row['identification_mark1']}}</td>
+		<td>{{row['identification_mark2']}}</td>
+		<td>{{row['address']}}</td>
+		<td>{{row['father_name']}}</td>
+		<td>{{row['place']}}</td>
+		<td>{{row['district']}}</td>
+		<td><a class="btn btn-success" href="?action=delete&cid={{row['criminal_id']}}">Delete</a></td>
+		<td><a class="btn btn-success" href="?action=update&cid={{row['criminal_id']}}">Update</a></td>
+	</tr>
+	{% endfor %}
+	</table>
+</center>
+
+{% include 'footer.html'%}

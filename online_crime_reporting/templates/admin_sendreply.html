@@ -1,0 +1,25 @@
+{% include 'adminheader.html' %}
+ <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+           
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="img-fluid" src="/static/img/carousel-1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 1100px;">
+<center>
+	<h1 style="color: white">Send Reply</h1>
+	<form method="post">
+		<table class="table" style="width: 500px ;color: white">
+			<tr>
+				<th>Reply</th>
+				<td><input type="text" class="form-control" required="" name="rep"></td>
+			</tr>
+			<tr>
+				<td  align="center" colspan="2"><input type="submit" class="btn btn-success" name="sreply" value="submit"></td>
+			</tr>
+		</table>
+	</form>
+</center>
+</div></div></div></div></div></div>
+{% include 'footer.html' %}

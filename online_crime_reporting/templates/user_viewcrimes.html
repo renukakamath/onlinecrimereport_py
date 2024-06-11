@@ -1,0 +1,47 @@
+{% include 'userheader.html' %}
+ <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+           
+            <div class="carousel-inner" style="height: 200px;">
+                <div class="carousel-item active">
+                    <img class="img-fluid" src="/static/img/carousel-1.jpg" alt="Image" >
+                    <div class="carousel-caption d-flex align-items-center justify-content-center">
+                        <div class="p-5" style="width: 100%; max-width: 900px">
+                        	</div></div></div></div></div></div>
+<center>
+	<h1>View Crimes</h1>
+	<table class="table" style="width: 500px ">
+		<tr>
+			<th>slno</th>
+			<th>Crime Type</th>
+			<th>station Name</th>
+			<th>Crime title</th>
+			<th>Crime description</th>
+			<th>Date Time Occurred</th>
+			<th>Date Time Reported</th>
+			<th>Crime Status</th>
+			<th>Place</th>
+			<th>Dob</th>
+			<th>District</th>
+			<th>Image</th>
+		</tr>
+		{% for row in data['cr']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['crime_type_name']}}</td>
+			<td>{{row['station_name']}}</td>
+			<td>{{row['crime_title']}}</td>
+			<td>{{row['crime_description']}}</td>
+			<td>{{row['date_time_reported']}}</td>
+			<td>{{row['date_time_occurred']}}</td>
+			<td>{{row['crime_status']}}</td>
+			<td>{{row['cplace']}}</td>
+			<td>{{row['dob']}}</td>
+			<td>{{row['district']}}</td>
+			<td><img src="/{{row['image']}}" width="100" height="100"></td>
+		
+		</tr>
+		{% endfor %}
+	</table>
+</center>
+{% include 'footer.html' %}
